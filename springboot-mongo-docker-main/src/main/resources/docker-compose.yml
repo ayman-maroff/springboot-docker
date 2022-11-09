@@ -1,0 +1,14 @@
+version: "3"
+services:
+  javatechiemongodb:
+    image: mongo:latest
+    container_name: "javatechiemongodb"
+    ports:
+      - 27017:27017
+  springboot-mongodb-person:
+    image: springboot-mongodb-person:latest
+    container_name: springboot-mongodb-person
+    ports:
+      - 8080:8080
+    links:
+      - javatechiemongodb
